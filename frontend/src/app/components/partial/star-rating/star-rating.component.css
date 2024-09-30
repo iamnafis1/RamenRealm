@@ -1,0 +1,26 @@
+.star-rating {
+    display: flex;
+    cursor: pointer;
+  }
+  
+  .star {
+    font-size: 24px;
+    color: lightgray;
+    transition: color 0.2s;
+  }
+  
+  .star.filled {
+    color: gold;
+  }
+  
+  .star.half-filled {
+    background: linear-gradient(to right, gold 50%, lightgray 50%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  .star:hover,
+  .star.filled:hover ~ .star {
+    color: darkgray;
+  }
+  

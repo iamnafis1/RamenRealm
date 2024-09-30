@@ -1,0 +1,45 @@
+<app-search></app-search>
+<ul class="food-list">
+  <li class="food-card" *ngFor="let food of foods; trackBy: trackByID">
+    <!-- Food Image and Name -->
+    <div class="card-header">
+      <a routerLink="/food/{{ food.id }}">
+        <img class="food-image" [src]="food.imageUrl" [alt]="food.name"/>
+      </a>
+    </div>
+
+    <!-- Food Details in a Card Body -->
+    <div class="card-body">
+      <div class="name-favorite">
+        <div class="name">
+          <a routerLink="/food/{{ food.id }}">{{ food.name }}</a>
+        </div>
+      <span class="favorite" [class.is-favorite]="food.favorite"> ❤</span>
+      </div>
+
+      <!-- Star Rating -->
+      <div class="stars">
+        <app-star-rating
+          [rating]="food.stars"
+          [totalStars]="5"
+          (ratingChange)="onRatingChange($event, food.id)">
+        </app-star-rating>
+      </div>
+
+      <!-- Price -->
+      <div class="price">
+        Price: ${{ food.price }}
+      </div>
+
+      <!-- Cook Time with Clock Icon -->
+      <div class="cook-time">
+        Cook time: {{ food.cookTime }}
+      </div>
+
+      <!-- Origins -->
+      <div class="origins">
+        Origins: {{ food.origins.join(', ') }}
+      </div>
+    </div>
+  </li>
+</ul>

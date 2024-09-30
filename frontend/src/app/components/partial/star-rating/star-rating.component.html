@@ -1,0 +1,10 @@
+<div class="star-rating">
+    <span *ngFor="let star of stars; let i = index"
+          class="star"
+          [class.filled]="star === true"
+          [class.half-filled]="star === 'half'"
+          (click)="onRate(i)">
+      ★
+    </span>
+  </div>
+  
