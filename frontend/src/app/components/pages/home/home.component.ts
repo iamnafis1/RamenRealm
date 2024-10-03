@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { FormArray, FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { FoodService } from 'src/app/services/food.service';
 import { Food } from 'src/app/shared/models/Food';
@@ -11,14 +10,19 @@ import { Food } from 'src/app/shared/models/Food';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent {
-  form!: FormGroup;
   foods: Food[] = [];
 
-  constructor(private fb: FormBuilder, private foodService: FoodService,activatedRoute:ActivatedRoute) {
+  constructor(private foodService: FoodService,activatedRoute:ActivatedRoute) {
     activatedRoute.params.subscribe((params)=>{
+      console.log('Params:', params);
        if(params.searchTerm){
-        this.foods=this.foodService.getAllFoodsBySearchTerm(params.searchTerm)
-       }else{
+        this.foods=this.foodService.getAllFoodsBySearchTerm(params.searchTerm);
+       }else if(params.tag){
+        this.foods=this.foodService.getAllFoodsByTags(params.tag)
+        console.log('food',this.foods)
+
+       }
+       else{
          // Get all the food data
         this.foods = this.foodService.getAllFood();
        }

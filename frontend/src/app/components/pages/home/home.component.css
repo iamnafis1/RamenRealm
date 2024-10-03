@@ -1,79 +1,112 @@
 .food-list {
-    list-style-type: none;
-    padding: 0;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  
-  .food-card {
-    width: 300px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    margin: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    transition: box-shadow 0.3s;
-  }
-  
-  .food-card:hover {
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-  }
-  
-  .food-image {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-  }
-  
-  .card-body {
-    padding: 15px;
-  }
-  
-  .name-favorite {
-    display: flex; /* Use flexbox for layout */
-    justify-content: space-between; /* Space between name and favorite */
-    align-items: center; /* Center align items vertically */
-    margin-bottom: 10px; /* Space below */
-  }
-  
-  .card-body .name {
-    font-size: 1.2em;
-    font-weight: bold;
-  }
-  
-  .favorite {
-    font-size: 24px;
-    color: grey; /* Default color for non-favorites */
-  }
-  
-  .favorite.is-favorite {
-    color: red; /* Highlight color for favorite items */
-  }
-  
-  
-  .card-body .tags,
-  .card-body .price,
-  .card-body .cook-time,
-  .card-body .origins {
-    margin-top: 5px;
-    color: #af1313;
-    font-size: 14px; /* Slightly smaller font size */
-  }
-  
-  .card-body .cook-time {
-    display: flex;
-    align-items: center;
-  }
-  
-  .card-body .cook-time:before {
-    content: '⏰';
-    margin-right: 8px;
-    font-size: 1.2em;
-  }
-  
-  .name a {
-    color: #af1313; /* Color for the food name link */
-    text-decoration: none;
-  }
-  
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Center the food cards */
+}
+
+.food-card {
+  width: 300px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: box-shadow 0.3s;
+}
+
+.food-card:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.food-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.card-body {
+  padding: 15px;
+}
+
+/* Name and Favorite section */
+.name-favorite {
+  display: flex; /* Flexbox layout */
+  justify-content: space-between; /* Space between name and favorite icon */
+  align-items: center; /* Align items vertically */
+  margin-bottom: 10px;
+}
+
+.card-body .name {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+.favorite {
+  font-size: 24px;
+  color: grey; /* Default color for non-favorite items */
+}
+
+.favorite.is-favorite {
+  color: red; /* Highlight favorite items */
+}
+
+/* Star Rating */
+.stars {
+  margin-bottom: 10px; /* Space below the star rating */
+}
+
+/* Cook Time and Origins side by side */
+.cook-origin-row {
+  display: flex;
+  justify-content: space-between; /* Align cook time and origins side by side */
+  margin-bottom: 10px;
+}
+
+.cook-time {
+  display: flex;
+  align-items: center;
+  color: #af1313;
+  font-size: 14px;
+}
+
+.cook-time:before {
+  content: '⏰';
+  margin-right: 5px;
+}
+
+.origins {
+  color: #af1313;
+  font-size: 14px;
+}
+
+/* Price aligned to the right */
+.price {
+  text-align: right;
+  color: #af1313;
+  font-weight: bold;
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+.name a {
+  color: #af1313; /* Link color for food name */
+  text-decoration: none;
+}
+.cook-origin-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.origin-pill {
+  background-color: #e0e0e0; /* Light grey background */
+  color: #333; /* Text color */
+  font-size: 12px;
+  padding: 4px 8px;
+  border-radius: 20px; /* Rounded corners */
+  display: inline-block;
+  margin-left: 4px; /* Space between pills */
+}

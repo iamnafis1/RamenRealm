@@ -1,0 +1,114 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 2rem; /* Reduced margin */
+  }
+  
+  .container > * {
+    min-width: 20rem; /* Reduced minimum width */
+    max-width: 35rem; /* Reduced maximum width */
+  }
+  
+  img {
+    border-radius: 2rem; /* Reduced border radius */
+    flex: 1 0;
+    object-fit: cover;
+    height: 25rem; /* Reduced image height */
+    margin: 0.8rem; /* Reduced margin */
+  }
+  
+  .details {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex: 1 0;
+    padding: 1.5rem; /* Reduced padding */
+    color: black;
+    margin-left: 0.8rem; /* Reduced margin */
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .name {
+    font-size: 1.5rem; /* Reduced font size */
+    font-weight: bold;
+  }
+  
+  .favorite {
+    color: #e72929;
+    font-size: 2rem; /* Reduced font size */
+  }
+  
+  .favorite.not {
+    color: grey;
+  }
+  
+  .origins {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0.8rem 0; /* Reduced margin */
+  }
+  
+  .origins span {
+    padding: 0.4rem; /* Reduced padding */
+    font-size: 1rem; /* Reduced font size */
+    margin: 0.4rem 0.4rem 0.4rem 0;
+    border-radius: 1.5rem; /* Reduced border radius */
+    background-color: aliceblue;
+  }
+  
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .tags a {
+    background-color: #f0f0f0;
+    padding: 0.2rem 0.8rem; /* Reduced padding */
+    margin: 0.2rem 0.1rem;
+    border-radius: 8rem; /* Reduced border radius */
+    font-weight: 600;
+    color: blue;
+  }
+  
+  .cook-time {
+    margin-top: 0.8rem; /* Reduced margin */
+  }
+  
+  .cook-time span {
+    padding: 0.4rem 1.5rem 0.4rem 0; /* Reduced padding */
+    border-radius: 8rem;
+    font-size: 1.1rem; /* Reduced font size */
+  }
+  
+  .price {
+    font-size: 1.5rem; /* Reduced font size */
+    margin: 1.5rem 1.5rem 1.5rem 0;
+    color: green;
+  }
+  
+  .price::before {
+    content: "Price: ";
+    color: darkgrey;
+  }
+  
+  button {
+    color: white;
+    background: #e72929;
+    border: none;
+    font-size: 1rem; /* Reduced font size */
+    padding: 0.8rem; /* Reduced padding */
+    border-radius: 8rem; /* Reduced border radius */
+    outline: none;
+  }
+  
+  button:hover {
+    opacity: 0.9;
+    cursor: pointer;
+  }
+  

@@ -1,20 +1,22 @@
 <app-search></app-search>
+<app-tags></app-tags>
 <ul class="food-list">
   <li class="food-card" *ngFor="let food of foods; trackBy: trackByID">
     <!-- Food Image and Name -->
     <div class="card-header">
       <a routerLink="/food/{{ food.id }}">
-        <img class="food-image" [src]="food.imageUrl" [alt]="food.name"/>
+        <img class="food-image" [src]="food.imageUrl" [alt]="food.name" loading="lazy"/>
       </a>
     </div>
 
     <!-- Food Details in a Card Body -->
     <div class="card-body">
+      <!-- Name and Favorite Heart -->
       <div class="name-favorite">
         <div class="name">
           <a routerLink="/food/{{ food.id }}">{{ food.name }}</a>
         </div>
-      <span class="favorite" [class.is-favorite]="food.favorite"> ❤</span>
+        <span class="favorite" [class.is-favorite]="food.favorite"> ❤</span>
       </div>
 
       <!-- Star Rating -->
@@ -22,24 +24,28 @@
         <app-star-rating
           [rating]="food.stars"
           [totalStars]="5"
+          [readonly]="true"
           (ratingChange)="onRatingChange($event, food.id)">
         </app-star-rating>
       </div>
 
+      <!-- Cook Time and Origins in One Row -->
+      <div class="cook-origin-row">
+        <div class="cook-time">
+          {{ food.cookTime }}
+        </div>
+        <div class="origins">
+          <ng-container *ngFor="let origin of food.origins">
+            <span class="origin-pill">{{ origin }}</span>
+          </ng-container>
+        </div>
+      
+      </div>
+
       <!-- Price -->
       <div class="price">
-        Price: ${{ food.price }}
-      </div>
-
-      <!-- Cook Time with Clock Icon -->
-      <div class="cook-time">
-        Cook time: {{ food.cookTime }}
-      </div>
-
-      <!-- Origins -->
-      <div class="origins">
-        Origins: {{ food.origins.join(', ') }}
-      </div>
+        {{ food.price | currency:'USD':'symbol':'1.2-2' }}      </div>
     </div>
   </li>
 </ul>
+<app-footer></app-footer>

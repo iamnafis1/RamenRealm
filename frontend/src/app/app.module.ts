@@ -8,6 +8,10 @@ import { HomeComponent } from './components/pages/home/home.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { StarRatingComponent } from './components/partial/star-rating/star-rating.component';
 import { SearchComponent } from './components/partial/search/search.component';
+import { TagsComponent } from './components/partial/tags/tags.component';
+import { FoodPageComponent } from './components/pages/food-page/food-page.component';
+import { CartComponent } from './components/pages/cart/cart.component';
+import { FooterComponent } from './components/partial/footer/footer.component';
 
 
 @NgModule({
@@ -16,7 +20,11 @@ import { SearchComponent } from './components/partial/search/search.component';
     HeadersComponent,
     HomeComponent,
     StarRatingComponent,
-    SearchComponent
+    SearchComponent,
+    TagsComponent,
+    FoodPageComponent,
+    CartComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

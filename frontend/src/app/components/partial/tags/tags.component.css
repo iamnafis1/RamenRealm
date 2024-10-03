@@ -1,0 +1,22 @@
+div {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  div a {
+    background-color: #f0f0f0;
+    padding: 0.3rem 1rem;
+    margin: 0.2rem 0.15rem;
+    border-radius: 10rem;
+    font-weight: 600;
+    color: blue;
+    text-decoration: none;
+    transition: background-color 0.3s; /* Optional: smooth transition */
+  }
+  
+  div a.active {
+    background-color: red; /* Apply red background when active */
+    color: white; /* Optional: change text color for better contrast */
+  }
+  
