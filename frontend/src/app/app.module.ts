@@ -12,6 +12,8 @@ import { TagsComponent } from './components/partial/tags/tags.component';
 import { FoodPageComponent } from './components/pages/food-page/food-page.component';
 import { CartComponent } from './components/pages/cart/cart.component';
 import { FooterComponent } from './components/partial/footer/footer.component';
+import { TitleComponent } from './components/partial/title/title.component';
+import { NotFoundComponent } from './components/partial/not-found/not-found.component';
 
 
 @NgModule({
@@ -24,7 +26,9 @@ import { FooterComponent } from './components/partial/footer/footer.component';
     TagsComponent,
     FoodPageComponent,
     CartComponent,
-    FooterComponent
+    FooterComponent,
+    TitleComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
