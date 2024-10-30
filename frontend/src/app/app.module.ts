@@ -14,6 +14,10 @@ import { CartComponent } from './components/pages/cart/cart.component';
 import { FooterComponent } from './components/partial/footer/footer.component';
 import { TitleComponent } from './components/partial/title/title.component';
 import { NotFoundComponent } from './components/partial/not-found/not-found.component';
+import {HttpClientModule} from '@angular/common/http';
+import { LoginPageComponent } from './components/pages/login-page/login-page.component'
+import { ToastrModule } from 'ngx-toastr';
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations"
 
 
 @NgModule({
@@ -28,13 +32,22 @@ import { NotFoundComponent } from './components/partial/not-found/not-found.comp
     CartComponent,
     FooterComponent,
     TitleComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    LoginPageComponent
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     ReactiveFormsModule,
     FormsModule,
+    HttpClientModule,
+    ReactiveFormsModule,
+    ToastrModule.forRoot({
+      timeOut:3000,
+      positionClass:'toast-bottom-right',
+      newestOnTop:false
+    }),// will be se for current project 
 
   ],
   // schemas: [CUSTOM_ELEMENTS_SCHEMA],

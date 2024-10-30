@@ -12,7 +12,9 @@ export class TagsComponent {
   tags?:Tag[];
   selectedTag:string='All'
   constructor(foodService:FoodService){
-    this.tags=foodService.getAllTags();
+    foodService.getAllTags().subscribe(serverTag=>{
+      this.tags=serverTag
+    });
 
   }
 

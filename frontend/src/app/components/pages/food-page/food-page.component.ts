@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { ChangeDetectorRef, Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CartService } from 'src/app/services/cart.service';
 import { FoodService } from 'src/app/services/food.service';
@@ -10,13 +10,19 @@ import { Food } from 'src/app/shared/models/Food';
   styleUrls: ['./food-page.component.css']
 })
 export class FoodPageComponent {
-  food: Food | undefined; 
+  food!: Food; 
 
-   constructor(activatedRoute:ActivatedRoute,foodService:FoodService,private router: Router,private cartService:CartService){
+   constructor(activatedRoute:ActivatedRoute,foodService:FoodService,private router: Router,private cartService:CartService,  private cdr: ChangeDetectorRef ){
     activatedRoute.params.subscribe((params) => {
       if (params.id) {
-        const foundFood = foodService.getFoodById(params.id);
-        this.food = foundFood.length > 0 ? foundFood[0] : undefined; // Assign the first found food or undefined
+        console.log('food id',params.id)
+        // const foundFood = foodService.getFoodById(params.id);
+        // this.food = foundFood.length > 0 ? foundFood[0] : undefined; 
+        foodService.getFoodById(params.id).subscribe(serverFood=>{
+          this.food=serverFood;
+          console.log(this.food)
+          this.cdr.detectChanges();
+        });
       }
     });
    }
