@@ -1,4 +1,4 @@
-import { NgModule,CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -14,10 +14,18 @@ import { CartComponent } from './components/pages/cart/cart.component';
 import { FooterComponent } from './components/partial/footer/footer.component';
 import { TitleComponent } from './components/partial/title/title.component';
 import { NotFoundComponent } from './components/partial/not-found/not-found.component';
-import {HttpClientModule} from '@angular/common/http';
+import {HttpClientModule,HTTP_INTERCEPTORS} from '@angular/common/http';
 import { LoginPageComponent } from './components/pages/login-page/login-page.component'
 import { ToastrModule } from 'ngx-toastr';
-import {BrowserAnimationsModule} from "@angular/platform-browser/animations"
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import { InputContainerComponent } from './components/partial/input-container/input-container.component';
+import { InputValidationComponent } from './components/partial/input-validation/input-validation.component';
+import { TextInputComponent } from './components/partial/text-input/text-input.component';
+import { DefaultButtonComponent } from './components/partial/default-button/default-button.component';
+import { RegisterPageComponent } from './components/pages/register-page/register-page.component';
+import { LoadingComponent } from './components/partial/loading/loading.component';
+import { LoadingInterceptor } from './shared/interceptors/loading.interceptor';
+
 
 
 @NgModule({
@@ -33,7 +41,13 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations"
     FooterComponent,
     TitleComponent,
     NotFoundComponent,
-    LoginPageComponent
+    LoginPageComponent,
+    InputContainerComponent,
+    InputValidationComponent,
+    TextInputComponent,
+    DefaultButtonComponent,
+    RegisterPageComponent,
+    LoadingComponent
   ],
   imports: [
     BrowserModule,
@@ -51,7 +65,8 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations"
 
   ],
   // schemas: [CUSTOM_ELEMENTS_SCHEMA],
-  providers: [],
+  providers: [
+    { provide:HTTP_INTERCEPTORS,useClass:LoadingInterceptor,multi:true}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
