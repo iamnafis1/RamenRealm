@@ -25,6 +25,9 @@ import { DefaultButtonComponent } from './components/partial/default-button/defa
 import { RegisterPageComponent } from './components/pages/register-page/register-page.component';
 import { LoadingComponent } from './components/partial/loading/loading.component';
 import { LoadingInterceptor } from './shared/interceptors/loading.interceptor';
+import { CheckoutPageComponent } from './components/pages/checkout-page/checkout-page.component';
+import { OrderItemsListComponent } from './components/partial/order-items-list/order-items-list.component';
+import { MapComponent } from './components/partial/map/map.component';
 
 
 
@@ -47,7 +50,10 @@ import { LoadingInterceptor } from './shared/interceptors/loading.interceptor';
     TextInputComponent,
     DefaultButtonComponent,
     RegisterPageComponent,
-    LoadingComponent
+    LoadingComponent,
+    CheckoutPageComponent,
+    OrderItemsListComponent,
+    MapComponent
   ],
   imports: [
     BrowserModule,
