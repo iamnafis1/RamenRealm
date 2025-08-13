@@ -3,7 +3,7 @@ import { sample_users } from '../data';
 import jwt from 'jsonwebtoken';
 import asyncHandler from 'express-async-handler';
 import { User, UserModel } from '../models/user.model';
-import { HTTP_BAD_REQUEST } from '../http_status';
+import { HTTP_BAD_REQUEST } from '../constants/http_status';
 import bycrpt from 'bcryptjs'
 const router = Router();
 
@@ -59,6 +59,7 @@ router.post('/register',asyncHandler(
   
   const generateTokenReponse = (user : User) => {
     const token = jwt.sign({
+      id: user.id, 
       email:user.email, 
       isAdmin: user.isAdmin
     },process.env.JWT_SECRET!,{
